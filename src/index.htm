@@ -1,11 +1,18 @@
 <head>
-    <meta charset="ascii">
+    <meta charset="UTF-8">
     <title>Password Generator</title>
 </head>
 
 <body>
-    Click below to generate a password.
-    <br><input id="btnGeneratePassword" type="button" value="Generate!" onclick="console.log(getRandomString(8, false, false, false, false));" />
+    <h1>Kurt's Password Generator</h1>
+    Enter parameters below, then click button to generate a random password.
+    <br/>
+    <br/>Password Length: <input id="fldPWLength" label="Password Length" type="text" size=5 value="8"/>
+    <span id="errPWLength" style="color:red;font-weight:bold"></span>
+    <br/>
+    <br/><input id="btnGeneratePassword" label="Click to Generate Password" type="button" value="Generate Password"/>
+    <br/>
+    <br/><textarea id="txtPasswords" rows=10 cols=64 style="white-space:pre"></textarea>
 </body>
 
 <script src="pwgen.js"></script>

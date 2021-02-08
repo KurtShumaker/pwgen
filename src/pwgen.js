@@ -4,6 +4,20 @@
 // Author: Kurt
 // ===
 
+document.getElementById("btnGeneratePassword").addEventListener("click", generatePassword);
+
+function generatePassword() {
+    let intPWLength = document.getElementById("fldPWLength").value;
+    const regexNumber = new RegExp("[0-9]");
+
+    if (regexNumber.test(intPWLength)) {
+        document.getElementById("txtPasswords").value += getRandomString(intPWLength, false, false, false, false) + "\r\n";
+        document.getElementById("errPWLength").textContent = "";
+    }
+    else
+        document.getElementById("errPWLength").textContent = "Must be a number!";
+}
+
 function getRandomString(length, requireLowercase, requireUppercase, requireNumber, requireSymbol) {
     let str_pw = "";
     let bHasUppercase = false;
